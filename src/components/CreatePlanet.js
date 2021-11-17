@@ -3,9 +3,9 @@ import { Modal, Button } from "react-bootstrap";
 import * as Icons from "react-feather";
 
 const AddPlanetModal = (props) => {
-    const [show, setShow] = useState(false);
+    // const [show, setShow] = useState(false);
     
-    const handleClose = () => setShow(true);
+    // const handleClose = () => setShow(true);
     return (
         <Modal {...props} size="lg" aria-labelledby="modal-title-vcenter" centered>
         <Modal.Header closeButton></Modal.Header>
@@ -25,10 +25,10 @@ const AddPlanetModal = (props) => {
                         <textarea class="form-control" id="floatingTextarea" ></textarea>
                     </div>
                     <Modal.Footer>
-                    <Button className="btn-cancel" onClick={handleClose}>
+                    <Button className="btn-cancel">
                         Cancel
                     </Button>
-                    <Button className="btn-create" onClick={handleClose}>
+                    <Button className="btn-create">
                         Create Planet
                     </Button>
                     </Modal.Footer>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Row } from "react-bootstrap";
 import planet1 from "../assets/planets/planet-1.svg"
 import planet2 from "../assets/planets/planet-2.svg"
@@ -88,14 +88,16 @@ const PlanetsData = () => {
           id: 12,
         },
       ];
+
+      let [open, setOpen] = useState(false);
     
       return (
         <>
-          <Row className="justify-content-center">
+          <Row className="justify-content-center" style={{marginRight:`${open? "360px" : "0"}`}}>
             {Planets.map((planet,i) => {
                 if (planet?.id) {
                     
-                return (<PlanetsCard key={i} planet={planet} />)
+                return (<PlanetsCard sidebarOpen={(v)=>setOpen(v)} key={i} planet={planet} />)
                 }
 
                 return null

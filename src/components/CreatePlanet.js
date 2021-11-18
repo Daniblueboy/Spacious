@@ -22,7 +22,7 @@ const AddPlanetModal = (props) => {
                     </div>
                     <div class="mb-3 form-check">
                         <label for="floatingTextarea">Description</label>
-                        <textarea class="form-control" id="floatingTextarea" ></textarea>
+                        <textarea class="form-control" id="floatingTextarea" />
                     </div>
                     <Modal.Footer>
                     <Button className="btn-cancel">
@@ -32,7 +32,7 @@ const AddPlanetModal = (props) => {
                         Create Planet
                     </Button>
                     </Modal.Footer>
-                </form>
+            </form>
         </Modal.Body>
       </Modal>
     );

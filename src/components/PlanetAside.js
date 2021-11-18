@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import planetPop1 from '../assets/characters/character-5.png'
 import planetPop2 from '../assets/characters/character-15.png'
 import planetPop3 from '../assets/characters/character-3.png'
@@ -7,9 +7,14 @@ import planetPop5 from '../assets/characters/character-14.png'
 import planetPop6 from '../assets/characters/character-6.png'
 
 
-function PlanetAside() {
+
+function PlanetAside({isOpen, setIsOpen}) {
+    let [open, setOpen] = useState(isOpen)
+    useEffect(()=>{
+        setOpen(isOpen)} , [isOpen])
     return (
-        <div className="container">
+        <div className={`${open? "transform: translate (0)": "transform:translate(100)"}`}>
+
             <div className="sidepop-container ms-4">
                     <div className="sidepop-content-alpha py-5 px-4">
                        <h2 className="alpha-planet">Planet Alpha</h2>

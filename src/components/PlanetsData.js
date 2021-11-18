@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import planet1 from "../assets/planets/planet-1.svg"
 import planet2 from "../assets/planets/planet-2.svg"
 import planet3 from "../assets/planets/planet-3.svg"
@@ -11,6 +11,7 @@ import planet8 from "../assets/planets/planet-8.svg"
 import planet9 from "../assets/planets/planet-9.svg"
 import PlanetsCard from './PlanetsCard';
 import CreatePlanet from './CreatePlanet';
+import PlanetAside from './PlanetAside';
 
 
 const PlanetsData = () => {
@@ -90,21 +91,34 @@ const PlanetsData = () => {
       ];
 
       let [open, setOpen] = useState(false);
+
+      const[isOpen, setIsOpen] = useState(false)
+      function Sidebar(val){
+        alert(val)
+        setIsOpen(val)
+        setOpen(val)
+      }
     
       return (
         <>
-          <Row className="justify-content-center" style={{marginRight:`${open? "360px" : "0"}`}}>
+          <Row className="justify-content-center" style={{marginRight:`${open? "360px" : "300px"}`}}>
+            {/* <Col xs={9}> */}
             {Planets.map((planet,i) => {
                 if (planet?.id) {
                     
-                return (<PlanetsCard sidebarOpen={(v)=>setOpen(v)} key={i} planet={planet} />)
+                return (<PlanetsCard sidebarOpen={(v)=>Sidebar(v)} key={i} planet={planet} />)
                 }
 
                 return null
 
             })}
             <CreatePlanet />
+            {/* </Col> */}
+            {/* <Col xs={3}> */}
+            <PlanetAside isOpen={isOpen} Sidebar={setIsOpen} />
+            {/* </Col> */}
           </Row>
+
         </>
     )
 }

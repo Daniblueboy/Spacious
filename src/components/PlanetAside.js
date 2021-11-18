@@ -5,10 +5,12 @@ import planetPop3 from '../assets/characters/character-3.png'
 import planetPop4 from '../assets/characters/character-5.png'
 import planetPop5 from '../assets/characters/character-14.png'
 import planetPop6 from '../assets/characters/character-6.png'
+import CloseSideBar from './CloseSideBar'
 
 
 
 function PlanetAside({isOpen, setIsOpen}) {
+    alert(isOpen)
     let [open, setOpen] = useState(isOpen)
     useEffect(()=>{
         setOpen(isOpen)} , [isOpen])
@@ -17,6 +19,9 @@ function PlanetAside({isOpen, setIsOpen}) {
 
             <div className="sidepop-container ms-4">
                     <div className="sidepop-content-alpha py-5 px-4">
+                        <div className="d-flex justify-content-end">
+                        <CloseSideBar />
+                        </div>
                        <h2 className="alpha-planet">Planet Alpha</h2>
                        <p className="alpha-planet-text">
                             Planet Alpha is the place to be if you love everything about planets. I know it's a bit meta but come see by yourself

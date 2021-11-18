@@ -12,10 +12,6 @@ import Char9 from "../assets/characters/character-9.png"
 import Char10 from "../assets/characters/character-10.png"
 import Char11 from "../assets/characters/character-11.png"
 import Char12 from "../assets/characters/character-12.png"
-// import Char13 from "../assets/characters/character-13.png"
-// import Char14 from "../assets/characters/character-14.png"
-// import Char15 from "../assets/characters/character-15.png"
-// import Char16 from "../assets/characters/character-16.png"
 import CharactersCard from './CharactersCard';
 import Aside from './Aside';
 import { useState } from 'react'

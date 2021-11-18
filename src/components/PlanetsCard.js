@@ -1,22 +1,17 @@
 import {React, useState} from 'react'
 import { Col } from "react-bootstrap";
-import { Sidebar } from 'react-feather';
 import PlanetAside from './PlanetAside';
 
 
 
 
 const PlanetsCard = ({planet, sidebarOpen}) => {
-  const[isOpen, setIsOpen] = useState(false)
-  function Sidebar(val){
-    setIsOpen(val)
-    sidebarOpen(val)
-  }
+ 
 
     return (
         <>
           <Col xs={12} md={4} lg={3} key={planet?.id}  >
-            <div className="card" onClick={() => Sidebar(true)}>
+            <div className="card" onClick={() => sidebarOpen()}>
               <div className="card-header">
                 <div className="card-img-container">
                   <img src={planet?.image} alt="" className="card-img" />
@@ -28,7 +23,7 @@ const PlanetsCard = ({planet, sidebarOpen}) => {
               </div>
             </div>
           </Col>
-          {isOpen? <PlanetAside isOpen={isOpen} Sidebar={setIsOpen}/> : null}
+          {/* {isOpen? <PlanetAside isOpen={isOpen} Sidebar={setIsOpen}/> : null} */}
           
         </>
         // className={isOpen? width = 100% - widthofsidebar: width = 100%}

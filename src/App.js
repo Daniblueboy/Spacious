@@ -15,20 +15,20 @@ function App() {
   
 
   return (
-    // {loading === false ? (
+    
     <>
 
     <div className="pt-1 px-5">
-    <Container>
-        <Row className="justify-content-center">
-          <Header />
-          <Navi />
-        </Row>
-    </Container>
+      <Container>
+        <Header />
+      </Container>
+      <Container>
+          <Row className="justify-content-center">
+            <Navi />
+          </Row>
+      </Container>
   </div>
-    {/* ): (
-      <Preloader />
-    )} */}
+    {}
 
     </>
   );

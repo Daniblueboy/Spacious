@@ -10,13 +10,12 @@ import * as Icons from "react-feather";
 import CloseSideBar from './CloseSideBar'
 
 
-function Aside({isOpen, setIsOpen}) {
+function Aside({isOpen, setIsOpen, name}) {
     // alert(isOpen)
     let [open, setOpen] = useState(isOpen)
     useEffect(()=>{
         setOpen(isOpen)} , [isOpen])
-
-
+        console.log(name);
     return (
         <div className={`${open? "transform: translate (0)": "transform:translate(100)"}`}>
             <div className="sidepop-container ms-4">
@@ -24,7 +23,8 @@ function Aside({isOpen, setIsOpen}) {
                     <Button size="lg" className="btn-close" onClick={() => setIsOpen(false)}>
                         <Icons.X />
                     </Button>
-                       <h2 className="jane-cooper">Jane Cooper</h2>
+                       <h2 className="jane-cooper">{`${name} Hello`}</h2>
+                       
                        <p className="janeCoop-text">
                             is really a nice person, she's been
                             living on Planet Alpha for the last 10 years.
@@ -113,6 +113,5 @@ function Aside({isOpen, setIsOpen}) {
 }
 
 export default Aside;
-
 
 

@@ -1,11 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Col } from "react-bootstrap";
+import Aside from './Aside';
 
 const CharactersCard = ({character, sidebarOpen}) => {
+  const [name, setName] = useState("hello")
+  const charsidebar = (e) =>{
+    sidebarOpen(true)
+    setName(e)
+    // alert(name)
+  }
     return (
         <>
           <Col xs={12} md={4} lg={3} key={character?.id} >
-            <div className="card card-char" onClick={() => sidebarOpen(true)}>
+            <div className="card card-char" onClick={() => charsidebar(character?.name)}>
               <div className="card-header">
                 <div className="card-img-container char">
                   <img src={character?.img} alt="" className="card-img" />
@@ -17,6 +24,9 @@ const CharactersCard = ({character, sidebarOpen}) => {
               </div>
             </div>
           </Col>
+          <div className="d-none">
+            <Aside name={name}/>
+          </div>
         </>
     )
 }

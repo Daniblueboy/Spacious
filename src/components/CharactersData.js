@@ -109,10 +109,14 @@ const CharactersData = () => {
       let [open, setOpen] = useState(false);
 
       const[isOpen, setIsOpen] = useState(false)
+      const [name, setName] = useState("undefined")
       function Sidebar(val){
         // alert(val)
         setIsOpen(val)
         setOpen(val)
+      }
+      function getName(e){
+        setName(e)
       }
     
       return (
@@ -122,7 +126,7 @@ const CharactersData = () => {
 
                 if (character?.id) {
                     
-                return (<CharactersCard key={i} character={character} sidebarOpen={Sidebar} />)
+                return (<CharactersCard key={i} character={character} sidebarOpen={Sidebar} getName={getName} />)
                 }
 
                 return null
@@ -130,7 +134,7 @@ const CharactersData = () => {
             )}
             <CreateCharacter />
             {
-              isOpen &&   <Aside isOpen={isOpen} setIsOpen={setIsOpen} />
+              isOpen &&   <Aside isOpen={isOpen} setIsOpen={setIsOpen} name={name}/>
             }
           </Row>
         </>

@@ -35,7 +35,7 @@ function PlanetAside({isOpen, setIsOpen}) {
                             Planet Alpha is the place to be if you love everything about planets. I know it's a bit meta but come see by yourself
                        </p>
                        <div className="alpha-planet-info d-flex">
-                            <p className="pe-5">Population<br/><h6 className="info-alpha">234</h6> </p>
+                            <p className="pe-5">Population<br/><span className="info-alpha">234</span> </p>
                        </div>
                        
                        <div className="alpha-planet-charaDetails">

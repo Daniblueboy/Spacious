@@ -2,11 +2,12 @@ import React, {useState} from 'react'
 import { Col } from "react-bootstrap";
 import Aside from './Aside';
 
-const CharactersCard = ({character, sidebarOpen}) => {
-  const [name, setName] = useState("hello")
+const CharactersCard = ({character, sidebarOpen, getName}) => {
+  // const [name, setName] = useState("hello")
   const charsidebar = (e) =>{
     sidebarOpen(true)
-    setName(e)
+    getName(e)
+    // setName(e)
     // alert(name)
   }
     return (
@@ -24,9 +25,9 @@ const CharactersCard = ({character, sidebarOpen}) => {
               </div>
             </div>
           </Col>
-          <div className="d-none">
+          {/* <div className="d-none">
             <Aside name={name}/>
-          </div>
+          </div> */}
         </>
     )
 }

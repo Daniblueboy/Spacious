@@ -13,9 +13,13 @@ import CloseSideBar from './CloseSideBar'
 function Aside({isOpen, setIsOpen, name}) {
     // alert(isOpen)
     let [open, setOpen] = useState(isOpen)
+    let [x,setName] = useState(name)
     useEffect(()=>{
-        setOpen(isOpen)} , [isOpen])
-        console.log(name);
+        setOpen(isOpen)
+        setName(name)
+    } , [isOpen, name])
+
+        console.log(x);
     return (
         <div className={`${open? "transform: translate (0)": "transform:translate(100)"}`}>
             <div className="sidepop-container ms-4">
@@ -23,14 +27,14 @@ function Aside({isOpen, setIsOpen, name}) {
                     <Button size="lg" className="btn-close" onClick={() => setIsOpen(false)}>
                         <Icons.X />
                     </Button>
-                       <h2 className="jane-cooper">{`${name} Hello`}</h2>
+                       <h2 className="jane-cooper">{x}</h2>
                        
                        <p className="janeCoop-text">
                             is really a nice person, she's been
                             living on Planet Alpha for the last 10 years.
                        </p>
                        <div className="janeCoop-info d-flex">
-                            <p className="pe-5">Planet<br/><h6 className="info-alpha">Alpha</h6> </p>
+                            <p className="pe-5">Planet<br/><span className="info-alpha">Alpha</span> </p>
                             <p>Friends<br/><span className="info-alpha">23</span> </p>
                        </div>
                        

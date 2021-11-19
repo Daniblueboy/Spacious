@@ -1,17 +1,29 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import char1 from '../assets/characters/character-10.png'
 import char2 from '../assets/characters/character-11.png'
 import char3 from '../assets/characters/character-15.png'
 import char4 from '../assets/characters/character-16.png'
 import char5 from '../assets/characters/character-2.png'
 import char6 from '../assets/characters/character-4.png'
+import Button from '@restart/ui/esm/Button'
+import * as Icons from "react-feather";
+import CloseSideBar from './CloseSideBar'
 
 
-function Aside() {
+function Aside({isOpen, setIsOpen}) {
+    // alert(isOpen)
+    let [open, setOpen] = useState(isOpen)
+    useEffect(()=>{
+        setOpen(isOpen)} , [isOpen])
+
+
     return (
-        <div className="container">
+        <div className={`${open? "transform: translate (0)": "transform:translate(100)"}`}>
             <div className="sidepop-container ms-4">
-                    <div className="sidepop-content py-5 px-4">
+                <div className="sidepop-content-alpha py-5 px-4">
+                    <Button size="lg" className="btn-close" onClick={() => setIsOpen(false)}>
+                        <Icons.X />
+                    </Button>
                        <h2 className="jane-cooper">Jane Cooper</h2>
                        <p className="janeCoop-text">
                             is really a nice person, she's been

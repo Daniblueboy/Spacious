@@ -105,30 +105,34 @@ const CharactersData = () => {
           id: 12,
         },
       ];
-    const [chara, setChara] = useState(false)
-    const asideBar = () => {setChara(!chara)}
+
+      let [open, setOpen] = useState(false);
+
+      const[isOpen, setIsOpen] = useState(false)
+      function Sidebar(val){
+        // alert(val)
+        setIsOpen(val)
+        setOpen(val)
+      }
     
       return (
         <>
-          <Row className="justify-content-center">
+          <Row className="justify-content-center" style={{marginRight:`${!isOpen? "0" : "300px"}`}}>
             {Chars.map((character, i) => {
 
                 if (character?.id) {
                     
-                return (<CharactersCard key={i} character={character} onClick={asideBar} />)
+                return (<CharactersCard key={i} character={character} sidebarOpen={Sidebar} />)
                 }
 
                 return null
             }   
             )}
             <CreateCharacter />
-          </Row>
-          <div>
             {
-                chara && <Aside />
+              isOpen &&   <Aside isOpen={isOpen} setIsOpen={setIsOpen} />
             }
-          </div>
-
+          </Row>
         </>
     )
 }

@@ -1,11 +1,11 @@
 import React from 'react'
 import { Col } from "react-bootstrap";
 
-const CharactersCard = ({character}) => {
+const CharactersCard = ({character, sidebarOpen}) => {
     return (
         <>
           <Col xs={12} md={4} lg={3} key={character?.id} >
-            <div className="card card-char">
+            <div className="card card-char" onClick={() => sidebarOpen(true)}>
               <div className="card-header">
                 <div className="card-img-container char">
                   <img src={character?.img} alt="" className="card-img" />

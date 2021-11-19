@@ -11,7 +11,7 @@ const PlanetsCard = ({planet, sidebarOpen}) => {
     return (
         <>
           <Col xs={12} md={4} lg={3} key={planet?.id}  >
-            <div className="card" onClick={() => sidebarOpen()}>
+            <div className="card" onClick={() => sidebarOpen(true)}>
               <div className="card-header">
                 <div className="card-img-container">
                   <img src={planet?.image} alt="" className="card-img" />

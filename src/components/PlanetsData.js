@@ -94,19 +94,19 @@ const PlanetsData = () => {
 
       const[isOpen, setIsOpen] = useState(false)
       function Sidebar(val){
-        alert(val)
+        // alert(val)
         setIsOpen(val)
         setOpen(val)
       }
     
       return (
         <>
-          <Row className="justify-content-center" style={{marginRight:`${open? "360px" : "300px"}`}}>
+          <Row className="justify-content-center" style={{marginRight:`${!isOpen? "0" : "300px"}`}}>
             {/* <Col xs={9}> */}
             {Planets.map((planet,i) => {
                 if (planet?.id) {
                     
-                return (<PlanetsCard sidebarOpen={(v)=>Sidebar(v)} key={i} planet={planet} />)
+                return (<PlanetsCard sidebarOpen={Sidebar} key={i} planet={planet} />)
                 }
 
                 return null
@@ -115,7 +115,10 @@ const PlanetsData = () => {
             <CreatePlanet />
             {/* </Col> */}
             {/* <Col xs={3}> */}
-            <PlanetAside isOpen={isOpen} Sidebar={setIsOpen} />
+            {
+              isOpen &&   <PlanetAside isOpen={isOpen} setIsOpen={setIsOpen} />
+            }
+          
             {/* </Col> */}
           </Row>
 

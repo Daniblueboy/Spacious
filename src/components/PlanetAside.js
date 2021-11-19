@@ -6,11 +6,13 @@ import planetPop4 from '../assets/characters/character-5.png'
 import planetPop5 from '../assets/characters/character-14.png'
 import planetPop6 from '../assets/characters/character-6.png'
 import CloseSideBar from './CloseSideBar'
+import Button from '@restart/ui/esm/Button'
+import * as Icons from "react-feather";
 
 
 
 function PlanetAside({isOpen, setIsOpen}) {
-    alert(isOpen)
+    // alert(isOpen)
     let [open, setOpen] = useState(isOpen)
     useEffect(()=>{
         setOpen(isOpen)} , [isOpen])
@@ -20,7 +22,13 @@ function PlanetAside({isOpen, setIsOpen}) {
             <div className="sidepop-container ms-4">
                     <div className="sidepop-content-alpha py-5 px-4">
                         <div className="d-flex justify-content-end">
-                        <CloseSideBar />
+                        {/* <CloseSideBar  setClosesidebar={setIsOpen}/> */}
+
+                        <Button size="lg" className="btn-close" onClick={() => setIsOpen(false)}>
+                <Icons.X />
+         </Button>  
+
+
                         </div>
                        <h2 className="alpha-planet">Planet Alpha</h2>
                        <p className="alpha-planet-text">
